@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=390">
+  <title>상황 선택</title>
+  <style>
+  * {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+                 "Noto Sans KR", sans-serif;
+  }
+
+  body {
+    margin: 0;
+    padding: 24px 16px 40px;
+    background: #ffffff;
+    color: #111;
+  }
+
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  button {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: none;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  button:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+
+  /* 결과 카드 */
+  #result {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    background: #f4f4f4;
+    font-size: 17px;
+    line-height: 1.6;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  /* 복사 버튼 살짝 강조 */
+  .copy-btn {
+    margin-top: 16px;
+    background: #2f6df6;
+  }
+
+  /* 광고 영역 */
+  .ad {
+    margin-top: 32px;
+    height: 50px;
+    border-radius: 8px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #666;
+  }
+  body {
+    max-width: 390px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin-top: 32px;
+    font-size: 26px;
+    letter-spacing: -0.3px;
+  }
+
+  h2 {
+    margin-top: 24px;
+    font-size: 22px;
+    letter-spacing: -0.2px;
+  }
+
+  p {
+    color: #444;
+  }
+
+
+  button {
+    background: #000;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
+  }
+
+  button:active {
+    transform: scale(0.97);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  }
+
+
+  button + button {
+    margin-top: 6px;
+  }
+
+
+  #result {
+    background: #f8f8f8;
+    border-radius: 18px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+  }
+
+
+  .copy-btn {
+    background: #007aff; /* iOS 블루 */
+    box-shadow: 0 6px 12px rgba(0,122,255,0.25);
+  }
+
+  .copy-btn:active {
+    box-shadow: 0 3px 6px rgba(0,122,255,0.35);
+  }
+
+
+  .ad {
+    background: #fafafa;
+    border-radius: 14px;
+    border: 1px dashed #ddd;
+    font-size: 13px;
+    color: #999;
+  }
+
+</style>
+
+</head>
+<body>
+  <h2>상황을 선택하세요</h2>
+
+  <!-- 1 -->
+  <button onclick="selectSituation('먹을지 말지')">
+    오늘 뭐 먹을지
+  </button>
+
+  <!-- 2 -->
+  <button onclick="selectSituation('연락할지 말지')">
+    연락할까 말까
+  </button>
+
+  <!-- 3 -->
+  <button onclick="selectSituation('쉴지 일할지')">
+    쉴까 일할까
+  </button>
+
+  <!-- 4 -->
+  <button onclick="selectSituation('나갈지 말지')">
+    약속 나갈까 말까
+  </button>
+
+  <!-- 5 -->
+  <button onclick="selectSituation('회사에 뭐라고 말할지')">
+    회사에 뭐라고 말하지
+  </button>
+
+  <!-- 6 -->
+  <button onclick="selectSituation('톡 답장할지 말지')">
+    톡 바로 답장할까
+  </button>
+
+  <!-- 7 -->
+  <button onclick="selectSituation('돈 쓸지 말지')">
+    돈 쓸까 말까
+  </button>
+
+  <!-- 8 -->
+  <button onclick="selectSituation('중요한 결정 미루기')">
+    중요한 결정 미루기
+  </button>
+
+  <!-- 9 -->
+  <button onclick="selectSituation('모임 빠지기')">
+    모임에서 빠질 때
+  </button>
+
+  <!-- 10 -->
+  <button onclick="selectSituation('랜덤 웃긴 핑계')">
+    그냥 웃긴 핑계
+  </button>
+
+  <script>
+    function selectSituation(value) {
+      localStorage.setItem("situation", value);
+      location.href = "tone.html";
+    }
+  </script>
+</body>
+</html>
